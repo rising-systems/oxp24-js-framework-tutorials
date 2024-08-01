@@ -14,4 +14,10 @@
         </field>
     </record>
 
+    <record id="real_estate.views_property_types_action" model="ir.actions.act_window">
+        <field name="name">Property Types</field>
+        <field name="res_model">real.estate.property.type</field>
+        <field name="view_mode">tree</field>
+    </record>
+
 </odoo>
