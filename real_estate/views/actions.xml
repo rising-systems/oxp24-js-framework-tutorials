@@ -20,4 +20,10 @@
         <field name="view_mode">tree</field>
     </record>
 
+    <record id="real_estate.views_tags_action" model="ir.actions.act_window">
+        <field name="name">Tags</field>
+        <field name="res_model">real.estate.tag</field>
+        <field name="view_mode">tree</field>
+    </record>
+
 </odoo>
