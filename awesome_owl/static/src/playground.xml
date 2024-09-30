@@ -26,6 +26,21 @@
             <TodoList />
         </section>
 
+        <section class="p-3">
+            <TemplateComponent>
+                <!-- Fill the footer slot -->
+                <t t-set-slot="footer">
+                    <h3>Footer</h3>
+                    <p>This is the footer of the template component</p>
+                </t>
+
+                <!-- fill the default slot -->
+                <t t-set-slot="default">
+                    This is some text inside a template component
+                </t>
+            </TemplateComponent>
+        </section>
+
     </t>
 
 </templates>

@@ -1,10 +1,11 @@
 import { Component, useState, onMounted, markup } from "@odoo/owl";
 import { CounterCard } from "./counter/counter-card";
 import { TodoList } from "./todo/todo-list";
+import { TemplateComponent } from "./template-component";
 
 export class Playground extends Component {
   static template = "awesome_owl.playground";
-  static components = { CounterCard, TodoList };
+  static components = { CounterCard, TodoList, TemplateComponent };
 
   setup() {
     // Add 10 cards to the cards array
