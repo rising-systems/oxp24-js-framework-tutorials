@@ -5,6 +5,7 @@
         <div class="p-3">
             Owl Playground
         </div>
+        <CardWithSlot title="'Empty slot'" />
         <CardWithSlot title="'Stateful Sum'">
             <Counter onChange.bind="incrementSum"/>
             <Counter onChange.bind="incrementSum"/>

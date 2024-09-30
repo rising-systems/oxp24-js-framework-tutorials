@@ -4,9 +4,9 @@
 			<div class="card-body">
 				<h5 class="card-title">
 					<t t-esc="props.title"/>
-					<span class="fa fa-minus ms-3 text-danger" t-on-click="toggleCardMinimized" />
+					<span t-if="props.slots" class="fa fa-minus ms-3 text-danger" t-on-click="toggleCardMinimized" />
 				</h5>
-				<div t-if="!this.state.isMinimized">
+				<div t-if="props.slots &amp;&amp; !this.state.isMinimized">
 					<t t-slot="default"/>
 				</div>
 			</div>
