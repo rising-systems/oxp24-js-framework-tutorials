@@ -21,6 +21,9 @@
             <Card title="'First card title'" content="'Card contents'" />
             <Card title="'Second card title'" content="this.htmlcontent" />
         </div>
+        <div>
+            <TodoList />
+        </div>
     </t>
 
 </templates>

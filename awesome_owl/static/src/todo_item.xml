@@ -1,0 +1,8 @@
+<templates xml:space="preserve">
+	<t t-name="awesome_owl.TodoItem">
+		<li class="list-group-item">
+			<input type="checkbox" />
+			<label t-esc="props.todo.description" />
+		</li>
+	</t>
+</templates>

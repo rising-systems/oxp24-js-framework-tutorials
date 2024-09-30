@@ -1,11 +1,12 @@
 import { Component, markup, useState } from "@odoo/owl";
 import { Counter } from "./counter";
 import { CounterStateless } from "./counter_stateless";
+import { TodoList } from "./todo_list";
 import { Card } from "./card";
 
 export class Playground extends Component {
 	static template = "awesome_owl.playground";
-	static components = { Counter, Card, CounterStateless };
+	static components = { Counter, Card, CounterStateless, TodoList };
 
 	setup() {
 		this.htmlcontent = markup`<a href="http://rs.ag">rising sysstems</a>`;
