@@ -1,0 +1,8 @@
+<templates xml:space="preserve">
+	<t t-name="awesome_owl.CounterStateless">
+		<div class="d-flex align-items-center">
+			<p>Counter: <t t-esc="props.value"/></p>
+			<button class="btn btn-primary" t-on-click="increment">Increment</button>
+		</div>
+	</t>
+</templates>
