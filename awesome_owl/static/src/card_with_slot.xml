@@ -2,8 +2,11 @@
 	<t t-name="awesome_owl.CardWithSlot">
 		<div class="card d-inline-block m-2" style="width: 18rem;">
 			<div class="card-body">
-				<h5 class="card-title" t-esc="props.title" />
-				<div>
+				<h5 class="card-title">
+					<t t-esc="props.title"/>
+					<span class="fa fa-minus ms-3 text-danger" t-on-click="toggleCardMinimized" />
+				</h5>
+				<div t-if="!this.state.isMinimized">
 					<t t-slot="default"/>
 				</div>
 			</div>
