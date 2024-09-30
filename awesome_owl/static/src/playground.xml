@@ -6,7 +6,12 @@
             Owl Playground
         </div>
         <div>
-            <Counter />
+            <Counter onChange.bind="incrementSum"/>
+            <Counter onChange.bind="incrementSum"/>
+            <Counter onChange.bind="incrementSum" increment="2"/>
+            <p>Sum: <span t-esc="state.sum" /></p>
+        </div>
+        <div>
             <Card title="'First card title'" content="'Card contents'" />
             <Card title="'Second card title'" content="this.htmlcontent" />
         </div>
