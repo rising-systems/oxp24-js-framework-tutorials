@@ -1,0 +1,11 @@
+.o_dashboard {
+    background-color: #d8d8d8;
+    padding: 1rem;
+
+    .dashboardGrid {
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        grid-gap: 1rem;
+    }
+}

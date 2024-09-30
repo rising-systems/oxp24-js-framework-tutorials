@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<templates xml:space="preserve">
+
+    <t t-name="awesome_dashboard.AwesomeDashboard.dashboard-item">
+
+        <div class="customCard" t-attf-style="grid-column: span {{props.size}}">
+            <div class="card-body">
+                <t t-slot="default" />
+            </div>
+        </div>
+    </t>
+
+</templates>
