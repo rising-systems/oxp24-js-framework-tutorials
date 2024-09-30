@@ -15,26 +15,8 @@ class AwesomeDashboard extends Component {
 		};
 		this.action = useService("action");
 		this.statistics = useService("awesome_dashboard.statistics");
-		this.state = useState({
-			average_quantity: 0,
-			average_time: 0,
-			nb_cancelled_orders: 0,
-			nb_new_orders: 0,
-			orders_by_size: {
-				m: 0,
-				s: 0,
-				xl: 0,
-			},
-			total_amount: 0,
-		});
 		onWillStart(async () => {
-			const result = await this.statistics.loadStatistics();
-			this.state.average_quantity = result.average_quantity;
-			this.state.average_time = result.average_time;
-			this.state.nb_cancelled_orders = result.nb_cancelled_orders;
-			this.state.nb_new_orders = result.nb_new_orders;
-			this.state.orders_by_size = result.orders_by_size;
-			this.state.total_amount = result.total_amount;
+			this.statistics = await this.statistics.loadStatistics();
 		});
 	}
 
