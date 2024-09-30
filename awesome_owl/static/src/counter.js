@@ -1,7 +1,7 @@
 import { Component, useState } from "@odoo/owl";
 
 export class Counter extends Component {
-	static template = "my_module.Counter";
+	static template = "awesome_owl.Counter";
 
 	setup() {
 		this.state = useState({ value: 0 });
