@@ -23,7 +23,6 @@
 
 
         <section class="p-3">
-            <h2>Todo List</h2>
             <TodoList />
         </section>
 

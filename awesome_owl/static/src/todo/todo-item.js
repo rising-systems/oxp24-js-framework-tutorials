@@ -4,8 +4,7 @@ export class TodoItem extends Component {
   static template = xml`<div role="button" class="" t-on-click="toggleItem" t-att-class="{
   'text-muted text-decoration-line-through': props.itemData.isCompleted
   }">
-    <t t-esc="props.itemData.id"/>. 
-    <t t-esc="props.itemData.description"/>
+    <input type="checkbox" t-on-change="onChange" t-att-checked="props.itemData.isCompleted"/> <t t-esc="props.itemData.id"/>. <t t-esc="props.itemData.description"/>
     </div>`;
 
   static props = {
@@ -13,9 +12,10 @@ export class TodoItem extends Component {
       type: { id: Number, description: String, isCompleted: Boolean },
       optional: true,
     },
+    toggleState: Function,
   };
 
   toggleItem() {
-    this.props.itemData.isCompleted = !this.props.itemData.isCompleted;
+    this.props.toggleState(this.props.itemData.id);
   }
 }

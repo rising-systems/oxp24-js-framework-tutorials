@@ -5,15 +5,23 @@
         <h3>Todo List</h3>
 
         <!-- Input with button to add item -->
-        <div class="input-group mb-3">
-            <input type="text" class="form-control" t-on-keyup="addTodoOnEnter" t-att-placeholder="'Your todo item...'" />
-            <!-- <div class="input-group-append">
-                <button class="btn btn-primary" t-on-click="addTodo">Add</button>
-            </div> -->
+        <div class="input-group mb-3  has-validation">
+
+
+            <input type="text" t-ref="todoInput" class="form-control" t-on-keyup="addTodoOnEnter" t-att-placeholder="'Your todo item...'" t-model="newTodoItem.value" />
+
+            <div class="input-group-append">
+                <button class="btn btn-primary" t-on-click="addTodoItem">Add</button>
+            </div>
+
+            <div id="validationServerUsernameFeedback" class="invalid-feedback" t-if="invalidInput.value">
+                Invalid input '<t t-esc="newTodoItem.value" />
+'
+            </div>
         </div>
 
         <t t-if="todos.length > 0" t-foreach="todos" t-as="item" t-key="item.id">
-            <TodoItem itemData="item" />
+            <TodoItem itemData="item" toggleState.bind="toggleTodo" />
         </t>
 
     </t>

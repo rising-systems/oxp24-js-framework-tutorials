@@ -1,4 +1,4 @@
-import { Component, useState } from "@odoo/owl";
+import { Component, useState, useRef, onMounted } from "@odoo/owl";
 import { TodoItem } from "./todo-item";
 
 export class TodoList extends Component {
@@ -7,24 +7,59 @@ export class TodoList extends Component {
 
   setup() {
     this.todos = useState([]);
-    //   { id: 1, description: "buy milk", isCompleted: false },
-    //   { id: 2, description: "buy eggs", isCompleted: true },
-    //   { id: 3, description: "buy bread", isCompleted: false },
+    this.invalidInput = useState({ value: false });
+    this.todoInput = useRef("todoInput");
+    this.newTodoItem = { value: "" };
+
+    // Alternative to useAutoFocus
+    onMounted(() => {
+      this.watchInput();
+      this.todoInput.el.focus();
+    });
+  }
+
+  toggleTodo(todoId) {
+    const todo = this.todos.find((todo) => todo.id === todoId);
+    if (todo) {
+      todo.isCompleted = !todo.isCompleted;
+    }
+  }
+
+  watchInput() {
+    // Watch the input field for changes
+    this.todoInput.el.addEventListener("input", (ev) => {
+      // add class "dirty"
+      ev.target.classList.toggle("dirty", !!ev.target.value);
+      // remove class "is-invalid"
+      ev.target.classList.remove("is-invalid");
+    });
   }
 
   // Add item to the list
-  addTodo(ev) {
+  addTodo(newItem) {
+    if (!newItem) {
+      // add class "is-invalid"
+      this.todoInput.el.classList.add("is-invalid");
+      this.invalidInput.value = true;
+      return;
+    }
     this.todos.push({
       id: this.todos.length + 1,
-      description: ev.target.value,
+      description: newItem,
       isCompleted: false,
     });
-    ev.target.value = "";
+
+    this.newTodoItem.value = "";
+    this.todoInput.el.value = "";
   }
 
   addTodoOnEnter(ev) {
     if (ev.key === "Enter" && ev.target.value) {
-      this.addTodo(ev);
+      this.addTodo(ev.target.value);
     }
+  }
+
+  addTodoItem() {
+    this.addTodo(this.newTodoItem.value);
   }
 }
