@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<templates xml:space="preserve">
+
+    <t t-name="awesome_owl.counter.counter-card">
+        <div class="card" style="width: 18rem;">
+            <div class="card-body">
+                <h5 class="card-title">Card #<t t-if="props.indexCount >= 0" t-esc="props.indexCount"/>
+                <Counter t-props="counter" />
+            </h5>
+            <p class="card-text">
+                <t t-out="props.cardBody" />
+            </p>
+        </div>
+        <!-- card footer / actions -->
+        <div class="card-footer">
+            <button class="btn btn-success" t-on-click="incrementCounter">Increment</button>
+            <button class="btn btn-danger" t-on-click="decrementCounter">Decrement</button>
+        </div>
+    </div>
+</t>
+
+</templates>

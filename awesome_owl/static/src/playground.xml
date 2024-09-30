@@ -3,8 +3,25 @@
 
     <t t-name="awesome_owl.playground">
         <div class="p-3">
-            hello world
+            <h1>Awesome Owl Playground</h1>
+            <!-- Welcome message -->
+            <div>
+                <h2>Welcome to the Awesome Owl Playground</h2>
+                <p>
+                    This is a playground where you can test the features of the Awesome Owl framework.
+                </p>
+            </div>
         </div>
+
+        <!-- Counter card -->
+        <!-- Add index to cards (indexCount) -->
+        <t t-esc="counterSum" />
+
+        <t t-foreach="cards" t-as="i" t-key="i.idx">
+            <CounterCard indexCount="i.idx" cardBody="i.cardBody" count="i.count" onChange.bind="counterSumChanged"/>
+        </t>
+
+
     </t>
 
 </templates>
