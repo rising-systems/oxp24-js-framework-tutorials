@@ -3,7 +3,7 @@
 		<input type="text" class="form-control" placeholder="Add a todo" t-on-keyup="addTodo" t-ref="todo_input"/>
         <ul class="list-group">
 			<t t-foreach="todos" t-as="todo" t-key="todo.id">
-				<TodoItem todo="todo" />
+				<TodoItem todo="todo" toggleState.bind="toggleState"/>
 			</t>
 		</ul>
 	</t>
