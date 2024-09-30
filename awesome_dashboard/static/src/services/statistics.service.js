@@ -11,4 +11,6 @@ export const dashboardCacheService = {
   },
 };
 
-registry.category("services").add("dashboardCache", dashboardCacheService);
+registry
+  .category("services")
+  .add("awesome_dashboard.statistics", dashboardCacheService);
