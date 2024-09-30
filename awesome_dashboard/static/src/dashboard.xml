@@ -10,10 +10,24 @@
             </t>
             <div class="d-flex flex-wrap">
                 <DashboardItem>
-                    My first card
+                    <h5>Average amount of t-shirt by order this month</h5>
+                    <span t-esc="state.average_quantity" class="text-success fw-bold" style="font-size: 2rem;"/>
                 </DashboardItem>
                 <DashboardItem size="2">
-                    Second card, this one is.
+                    <h5>Average time for an order to go from 'new' to 'sent' or 'cancelled'</h5>
+                    <span t-esc="state.average_time" class="text-success fw-bold" style="font-size: 2rem;"/>
+                </DashboardItem>
+                <DashboardItem>
+                    <h5>Number of cancelled orders this month</h5>
+                    <span t-esc="state.nb_cancelled_orders" class="text-success fw-bold" style="font-size: 2rem;"/>
+                </DashboardItem>
+                <DashboardItem>
+                    <h5>Number of new orders this month</h5>
+                    <span t-esc="state.nb_new_orders" class="text-success fw-bold" style="font-size: 2rem;"/>
+                </DashboardItem>
+                <DashboardItem>
+                    <h5>Total amount of new orders this month</h5>
+                    <span t-esc="state.total_amount" class="text-success fw-bold" style="font-size: 2rem;"/>
                 </DashboardItem>
             </div>
         </Layout>

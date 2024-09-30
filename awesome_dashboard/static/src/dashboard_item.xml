@@ -3,7 +3,7 @@
 
     <t t-name="awesome_dashboard.DashboardItem">
         <!-- <div class="card m-2 border-dark" t-att-style="cardWidth"> -->
-        <div class="card m-2 border-dark" t-attf-style="width: {{18*props.size}}rem;">
+        <div class="card m-2 border-dark d-flex justify-content-center align-items-center text-center" t-attf-style="width: {{18*props.size}}rem;">
             <div class="card-body">
                 <t t-slot="default" />
             </div>
