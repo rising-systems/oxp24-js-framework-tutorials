@@ -3,10 +3,17 @@ import { Counter } from "./counter";
 import { CounterStateless } from "./counter_stateless";
 import { TodoList } from "./todo_list";
 import { Card } from "./card";
+import { CardWithSlot } from "./card_with_slot";
 
 export class Playground extends Component {
 	static template = "awesome_owl.playground";
-	static components = { Counter, Card, CounterStateless, TodoList };
+	static components = {
+		Counter,
+		Card,
+		CounterStateless,
+		TodoList,
+		CardWithSlot,
+	};
 
 	setup() {
 		this.htmlcontent = markup`<a href="http://rs.ag">rising sysstems</a>`;

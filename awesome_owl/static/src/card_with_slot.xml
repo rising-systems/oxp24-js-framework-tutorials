@@ -1,0 +1,12 @@
+<templates xml:space="preserve">
+	<t t-name="awesome_owl.CardWithSlot">
+		<div class="card d-inline-block m-2" style="width: 18rem;">
+			<div class="card-body">
+				<h5 class="card-title" t-esc="props.title" />
+				<div>
+					<t t-slot="default"/>
+				</div>
+			</div>
+		</div>
+	</t>
+</templates>

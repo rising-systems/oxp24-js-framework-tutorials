@@ -5,18 +5,18 @@
         <div class="p-3">
             Owl Playground
         </div>
-        <div>
+        <CardWithSlot title="'Stateful Sum'">
             <Counter onChange.bind="incrementSum"/>
             <Counter onChange.bind="incrementSum"/>
             <Counter onChange.bind="incrementSum" increment="2"/>
             <p>Sum: <span t-esc="state.sum" /></p>
-        </div>
-        <div>
+        </CardWithSlot>
+        <CardWithSlot title="'Steteless Sum'">
             <!-- <CounterStateless value="this.statelessCounters[0]" /> -->
             <CounterStateless value="statelessCounters[0]" onChange.bind="() => this.statelessCounters[0]++"/>
             <CounterStateless value="statelessCounters[1]" onChange.bind="() => this.statelessCounters[1]++"/>
             <p>Sum: <span t-esc="statelessCountersSum" /></p>
-        </div>
+        </CardWithSlot>
         <div>
             <Card title="'First card title'" content="'Card contents'" />
             <Card title="'Second card title'" content="this.htmlcontent" />
