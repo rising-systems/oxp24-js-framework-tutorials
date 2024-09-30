@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<templates xml:space="preserve">
+
+    <t t-name="awesome_owl.todo.todo-list">
+        <h3>Todo List</h3>
+
+        <!-- Input with button to add item -->
+        <div class="input-group mb-3">
+            <input type="text" class="form-control" t-on-keyup="addTodoOnEnter" t-att-placeholder="'Your todo item...'" />
+            <!-- <div class="input-group-append">
+                <button class="btn btn-primary" t-on-click="addTodo">Add</button>
+            </div> -->
+        </div>
+
+        <t t-if="todos.length > 0" t-foreach="todos" t-as="item" t-key="item.id">
+            <TodoItem itemData="item" />
+        </t>
+
+    </t>
+
+</templates>

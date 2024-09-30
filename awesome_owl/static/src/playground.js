@@ -1,9 +1,10 @@
 import { Component, useState, onMounted, markup } from "@odoo/owl";
 import { CounterCard } from "./counter/counter-card";
+import { TodoList } from "./todo/todo-list";
 
 export class Playground extends Component {
   static template = "awesome_owl.playground";
-  static components = { CounterCard };
+  static components = { CounterCard, TodoList };
 
   setup() {
     // Add 10 cards to the cards array
@@ -31,31 +32,6 @@ export class Playground extends Component {
       {
         idx: 4,
         cardBody: markup("This is the <b>FIFTH</b> card."),
-        count: useState({ value: 0 }),
-      },
-      {
-        idx: 5,
-        cardBody: markup("This is the <b>SIXTH</b> card."),
-        count: useState({ value: 0 }),
-      },
-      {
-        idx: 6,
-        cardBody: markup("This is the <b>SEVENTH</b> card."),
-        count: useState({ value: 0 }),
-      },
-      {
-        idx: 7,
-        cardBody: markup("This is the <b>EIGHTH</b> card."),
-        count: useState({ value: 0 }),
-      },
-      {
-        idx: 8,
-        cardBody: markup("This is the <b>NINTH</b> card."),
-        count: useState({ value: 0 }),
-      },
-      {
-        idx: 9,
-        cardBody: markup("This is the <b>TENTH</b> card."),
         count: useState({ value: 0 }),
       },
     ];
