@@ -1,8 +1,11 @@
 <templates xml:space="preserve">
 	<t t-name="awesome_owl.TodoItem">
-		<li class="list-group-item">
-			<input type="checkbox" />
-			<label t-esc="props.todo.description" />
+		<li class="list-group-item" t-att-class="{
+			'text-decoration-line-through': props.todo.isCompleted,
+			'text-muted': props.todo.isCompleted,
+			}" >
+			<span t-esc="props.todo.id"/>. 
+			<span t-esc="props.todo.description"/>
 		</li>
 	</t>
 </templates>

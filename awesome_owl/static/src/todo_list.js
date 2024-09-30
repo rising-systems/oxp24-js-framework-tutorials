@@ -10,7 +10,7 @@ export class TodoList extends Component {
 	setup() {
 		this.todos = useState([
 			{ id: 1, description: "test 1", isCompleted: false },
-			{ id: 2, description: "test 2", isCompleted: false },
+			{ id: 2, description: "test 2", isCompleted: true },
 			{ id: 3, description: "test 3", isCompleted: false },
 		]);
 	}
