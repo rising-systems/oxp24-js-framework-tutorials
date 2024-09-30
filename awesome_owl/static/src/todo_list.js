@@ -10,6 +10,7 @@ export class TodoList extends Component {
 
 	setup() {
 		this.todos = useState([]);
+		this.todoSeq = useState({ lastId: 0 });
 		useAutofocus("todo_input");
 	}
 
@@ -17,8 +18,9 @@ export class TodoList extends Component {
 		if (ev.key !== "Enter" || ev.target.value.trim() == "") {
 			return;
 		}
+		this.todoSeq.lastId++;
 		this.todos.push({
-			id: this.todos.length + 1,
+			id: this.todoSeq.lastId,
 			description: ev.target.value.trim(),
 			isCompleted: false,
 		});
@@ -28,5 +30,11 @@ export class TodoList extends Component {
 	toggleState(todoId) {
 		const todo = this.todos.find((todo) => todo.id === todoId);
 		todo.isCompleted = !todo.isCompleted;
+	}
+
+	removeTodo(todoId) {
+		const todo = this.todos.find((todo) => todo.id === todoId);
+		const index = this.todos.indexOf(todo);
+		this.todos.splice(index, 1);
 	}
 }

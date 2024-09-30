@@ -1,13 +1,14 @@
 <templates xml:space="preserve">
 	<t t-name="awesome_owl.TodoItem">
 		<li class="list-group-item d-flex align-items-center">
-			<input type="checkbox" t-att-checked="props.todo.isCompleted" t-on-change="() => props.toggleState(props.todo.id)" class="form-check-input me-2"/>
+			<input type="checkbox" t-att-checked="props.todo.isCompleted" t-on-change="onChange" class="form-check-input me-2"/>
 			<span t-att-class="{
 			'text-decoration-line-through': props.todo.isCompleted,
 			'text-muted': props.todo.isCompleted,
 			}" >
 				<span t-esc="props.todo.id" />. 
 				<span t-esc="props.todo.description"/>
+				<span class="fa fa-trash ms-3 text-danger" t-on-click="() => props.removeTodo(props.todo.id)" />
 			</span>
 		</li>
 	</t>
