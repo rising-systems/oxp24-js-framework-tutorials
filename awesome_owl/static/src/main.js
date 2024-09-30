@@ -3,6 +3,7 @@ import { mountComponent } from "@web/env";
 import { Playground } from "./playground";
 
 const config = {
+	// https://github.com/odoo/owl/blob/master/doc/reference/app.md#configuration
 	dev: true,
 	name: "Owl Tutorial",
 };
