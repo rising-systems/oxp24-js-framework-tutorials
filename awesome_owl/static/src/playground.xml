@@ -8,7 +8,7 @@
         <div>
             <Counter />
             <Card title="'First card title'" content="'Card contents'" />
-            <Card title="'Second card title'" content="'Some other content'" />
+            <Card title="'Second card title'" content="this.htmlcontent" />
         </div>
     </t>
 
