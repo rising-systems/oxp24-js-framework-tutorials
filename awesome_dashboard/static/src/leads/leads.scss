@@ -1,0 +1,28 @@
+.list {
+    font-size: 14px;
+    .list-body {
+        display: flex  ;
+        flex-direction: column;
+
+        .list-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 1rem;
+            border-bottom: 1px solid #f9f9f9;
+            transition: all 0.05s ease-in-out;
+
+            &:hover {
+                background-color: #f9f9f9;
+            }
+
+            .list-row-title {
+                font-weight: 700;
+            }
+            .list-row-value {
+                font-weight: 400;
+            }
+        }
+
+
+    }
+}

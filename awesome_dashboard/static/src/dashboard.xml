@@ -9,6 +9,9 @@
                 <button class="btn btn-primary" t-on-click="openLeads">Leads</button>
             </t>
 
+            <h2 class="text-light" >Hey <t t-esc="user.name" />!</h2>
+            <p class="mb-4 text-light">Here is your dashboard</p>
+
             <div class="dashboardGrid">
                 <DashboardItem size="1" colorClass="'red'">
                     <t t-set-slot="header">
@@ -62,6 +65,15 @@
                     </t>
                     <t t-set-slot="default">
                         <t t-esc="dashboardData.nb_new_orders" />
+                    </t>
+                </DashboardItem>
+
+                <DashboardItem size="2" height="2" colorClass="'purple'" t-if="latestLeads">
+                    <t t-set-slot="header">
+                        <h3>new_customers</h3>
+                    </t>
+                    <t t-set-slot="default">
+                        <DashboardLeads latestLeads="latestLeads" />
                     </t>
                 </DashboardItem>
 

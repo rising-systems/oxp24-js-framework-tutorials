@@ -9,6 +9,7 @@ from odoo.http import request
 logger = logging.getLogger(__name__)
 
 class AwesomeDashboard(http.Controller):
+    # Get the statistics
     @http.route('/awesome_dashboard/statistics', type='json', auth='user')
     def get_statistics(self):
         """
@@ -33,4 +34,20 @@ class AwesomeDashboard(http.Controller):
             },
             'total_amount': random.randint(100, 1000)
         }
+        
+    # Get latest leads from crm
+    @http.route('/awesome_dashboard/latest_leads', type='json', auth='user')
+    def get_leads(self):
+        """
+        Returns a list of the 5 latest leads
+        """
+        leads = request.env['crm.lead'].search([], limit=5, order='create_date desc')
+        return [{
+            'id': lead.id,
+            'name': lead.name,
+            'contact_name': lead.contact_name,
+            'email_from': lead.email_from,
+            'phone': lead.phone,
+            'create_date': lead.create_date,
+        } for lead in leads]
 

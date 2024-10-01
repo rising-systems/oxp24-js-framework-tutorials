@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<templates xml:space="preserve">
+
+    <t t-name="awesome_dashboard.dashboard-leads">
+        <!-- col span, row span; color with less saturation-->
+         <div class="list">
+            <div class="list-body">
+                <div class="list-row">
+                    <div class="list-cell">Name</div>
+                    <div class="list-cell">Create Date</div>
+                </div>
+                <t t-foreach="props.latestLeads" t-as="lead" t-key="lead.id">
+                    <div class="list-row">
+                        <div class="list-cell"><t t-esc="lead.name"/></div>
+                        <div class="list-cell"><t t-esc="lead.create_date"/></div>
+                    </div>
+                </t>
+            </div>
+        </div>
+
+    </t>
+
+</templates>
