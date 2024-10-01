@@ -1,0 +1,6 @@
+<templates xml:space="preserve">
+    <t t-name="awesome_clicker.number_display">
+        <!-- humanNumber -->
+        Clicks: <span t-attf-data-tooltip="Current number of clicks: {{this.clicker.clicks}}" t-esc="humanizedClicks"/>
+    </t>
+</templates>
