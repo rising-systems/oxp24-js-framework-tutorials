@@ -1,13 +1,14 @@
+import { Component } from "@odoo/owl";
 import { registry } from "@web/core/registry";
-import { Component, useState, useExternalListener } from "@odoo/owl";
 import { useService } from "@web/core/utils/hooks";
-import { useClicker } from "./clicker_hook";
-import { ClickerValue } from "./clicker_value";
+import { useClicker } from "../clicker_hook";
+import { ClickerValue } from "../clicker_value/clicker_value";
 
 export class ClickerSystray extends Component {
 	static template = "awesome_clicker.ClickerSystray";
-	static components = { ClickerValue };
 	static props = {};
+	static components = { ClickerValue };
+
 	setup() {
 		this.action = useService("action");
 		this.clicker = useClicker();
@@ -26,6 +27,7 @@ export class ClickerSystray extends Component {
 		});
 	}
 }
+
 export const systrayItem = {
 	Component: ClickerSystray,
 };

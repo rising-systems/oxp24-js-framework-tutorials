@@ -1,4 +1,5 @@
 <templates xml:space="preserve">
+
     <t t-name="awesome_clicker.ClickerClientAction">
         <div class="ms-1 mt-1">
             <span>Clicks: <ClickerValue/> </span>
@@ -7,4 +8,5 @@
             </button>
         </div>
     </t>
+
 </templates>
