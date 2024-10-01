@@ -1,5 +1,5 @@
 .o_dashboard {
-    background-color: #d8d8d8;
+    background-color: #ffffff;
     padding: 1rem;
 
     .dashboardGrid {
@@ -7,5 +7,6 @@
         display: grid;
         grid-template-columns: repeat(5, 1fr);
         grid-gap: 1rem;
+        grid-auto-flow: row dense;
     }
 }

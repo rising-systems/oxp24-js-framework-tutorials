@@ -3,4 +3,53 @@
     background-color: white;
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1), 0 0 20px rgba(0, 0, 0, 0.05);
+    // Scale size on hover
+    transition: all 0.05s ease-in-out;
+
+    .body {
+        margin-top: 1rem;
+        font-size: 4rem;
+        font-weight: 700;
+    }
+
+    &:hover {
+        transform: scale(1.02);
+        background-color: #f9f9f9;
+    }
+    
+    // Add background color classes with light colors
+    &.red {
+        background-color: #ffcccc;
+    }
+    &.green {
+        background-color: #ccffcc;
+    }
+    &.blue {
+        background-color: #ccccff;
+    }
+    &.yellow {
+        background-color: #ffffcc;
+    }
+    &.purple {
+        background-color: #e6ccff;
+    }
+    &.orange {
+        background-color: #ffcc99;
+    }
+    &.pink {
+        background-color: #ffccff;
+    }
+    &.cyan {
+        background-color: #ccffff;
+    }
+    &.teal {
+        background-color: #ccddff;
+    }
+    &.indigo {
+        background-color: #ccccff;
+    }
+    &.gray {
+        background-color: #f9f9f9;
+    }
+
 }

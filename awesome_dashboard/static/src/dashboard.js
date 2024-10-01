@@ -3,15 +3,16 @@ import { registry } from "@web/core/registry";
 import { Layout } from "@web/search/layout";
 import { useService } from "@web/core/utils/hooks";
 import { DashboardItem } from "./dashboad-item/dashboard-item";
+import { PieChart } from "./charts/pie/pie-chart";
 
 class AwesomeDashboard extends Component {
   static template = "awesome_dashboard.AwesomeDashboard";
-  static components = { Layout, DashboardItem };
+  static components = { Layout, DashboardItem, PieChart };
 
   setup() {
     this.display = { controlPanel: {} };
     this.action = useService("action");
-    this.dashboardCache = useService("dashboardCache");
+    this.dashboardCache = useService("awesome_dashboard.statistics");
 
     onWillStart(async () => {
       this.dashboardData = await this.dashboardCache.loadStatistics();

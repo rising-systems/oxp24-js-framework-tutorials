@@ -2,10 +2,13 @@
 <templates xml:space="preserve">
 
     <t t-name="awesome_dashboard.AwesomeDashboard.dashboard-item">
-
-        <div class="customCard" t-attf-style="grid-column: span {{props.size}}">
+        <!-- col span, row span; color with less saturation-->
+        <div t-attf-class="customCard {{props.colorClass}}" t-attf-style="grid-column: span {{props.size}}; grid-row: span {{props.height}}">
             <div class="card-body">
-                <t t-slot="default" />
+                <t t-slot="header" />
+                <div class="body">
+                    <t t-slot="default" />
+                </div>
             </div>
         </div>
     </t>

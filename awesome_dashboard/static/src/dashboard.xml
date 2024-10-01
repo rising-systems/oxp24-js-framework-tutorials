@@ -10,70 +10,58 @@
             </t>
 
             <div class="dashboardGrid">
-
-                <!-- 
-                    //   "result": {
-                    //     "average_quantity": 9,
-                    //     "average_time": 90,
-                    //     "nb_cancelled_orders": 47,
-                    //     "nb_new_orders": 129,
-                    //     "orders_by_size": {
-                    //         "m": 103,
-                    //         "s": 27,
-                    //         "xl": 72
-                    //     },
-                    //     "total_amount": 985
-                    // } -->
-                <DashboardItem size="1">
-                    <t t-set-slot="default">
+                <DashboardItem size="1" colorClass="'red'">
+                    <t t-set-slot="header">
                         <h3>average_quantity</h3>
-                        <p>Avg: <t t-esc="dashboardData.average_quantity" />
-                        </p>
+                    </t>
+                    <t t-set-slot="default">
+                        <t t-esc="dashboardData.average_quantity" />
                     </t>
                 </DashboardItem>
-                <DashboardItem size="1">
-                    <t t-set-slot="default">
+
+                <DashboardItem size="1" colorClass="'teal'">
+                    <t t-set-slot="header">
                         <h3>average_time</h3>
-                        <p>Avg: <t t-esc="dashboardData.average_time" />
-                        </p>
+                    </t>
+                    <t t-set-slot="default">
+                        <t t-esc="dashboardData.average_time" />
                     </t>
                 </DashboardItem>
-                <DashboardItem size="1">
-                    <t t-set-slot="default">
-                        <h3>nb_cancelled_orders</h3>
-                        <p>Cancelled: <t t-esc="dashboardData.nb_cancelled_orders" />
-                        </p>
-                    </t>
-                </DashboardItem>
-                <DashboardItem size="2">
-                    <t t-set-slot="default">
-                        <h3>total_amount</h3>
-                        <p>Total: <t t-esc="dashboardData.total_amount" />
-                        </p>
-                    </t>
-                </DashboardItem>
-                <DashboardItem size="3">
-                    <t t-set-slot="default">
+
+                <DashboardItem size="2" height="3" colorClass="'orange'">
+                    <t t-set-slot="header">
                         <h3>orders_by_size</h3>
-                        <!-- full width 3 col row -->
-                        <div class="row w-100">
-                            <div class="col-4">Size M: <t t-esc="dashboardData.orders_by_size.m" />
-                            </div>
-
-                            <div class="col-4">Size S: <t t-esc="dashboardData.orders_by_size.s" />
-                            </div>
-
-                            <div class="col-4">Size XL: <t t-esc="dashboardData.orders_by_size.xl" />
-                            </div>
-                        </div>
+                    </t>
+                    <t t-set-slot="default">
+                        <PieChart data="dashboardData['orders_by_size']" label="'Shirt orders by size'"/>
                     </t>
                 </DashboardItem>
 
-                <DashboardItem size="1">
+                <DashboardItem size="1" height="2" colorClass="'green'">
+                    <t t-set-slot="header">
+                        <h3>orders_by_status</h3>
+                    </t>
                     <t t-set-slot="default">
-                        <h3>nb_new_orders</h3>
-                        <p>New: <t t-esc="dashboardData.nb_new_orders" />
-                        </p>
+                        <t t-esc="dashboardData.nb_cancelled_orders" />
+                        <i class="fa-solid fa-arrow-trend-up"></i>
+                    </t>
+                </DashboardItem>
+
+                <DashboardItem size="2" colorClass="'yellow'">
+                    <t t-set-slot="header">
+                        <h3>total_amount</h3>
+                    </t>
+                    <t t-set-slot="default">
+                        <t t-esc="dashboardData.total_amount" />
+                    </t>
+                </DashboardItem>
+
+                <DashboardItem size="1" colorClass="'cyan'">
+                    <t t-set-slot="header">
+                        <h3>new_orders</h3>
+                    </t>
+                    <t t-set-slot="default">
+                        <t t-esc="dashboardData.nb_new_orders" />
                     </t>
                 </DashboardItem>
 
