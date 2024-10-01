@@ -1,13 +1,19 @@
 import { registry } from "@web/core/registry";
-import { Component, useState } from "@odoo/owl";
+import { Component, useState, useExternalListener } from "@odoo/owl";
+
 export class ClickerSystray extends Component {
 	static template = "awesome_clicker.ClickerSystray";
 	static props = {};
 	setup() {
 		this.state = useState({ counter: 0 });
+		//useExternalListener already has the teardown logic built-in
+		// the last "true" argument is to use the capture, related to the event propagation
+		useExternalListener(document.body, "click", this.increment, true);
 	}
+
 	increment() {
-		this.state.counter++;
+		// we increment here by 9 so that the user get 10 (1 for the general body click)
+		this.state.counter += 9;
 	}
 }
 export const systrayItem = {
