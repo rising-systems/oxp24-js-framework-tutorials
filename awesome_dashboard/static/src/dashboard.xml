@@ -29,6 +29,10 @@
                     <h5>Total amount of new orders this month</h5>
                     <span t-esc="statistics.total_amount" class="text-success fw-bold" style="font-size: 2rem;"/>
                 </DashboardItem>
+                <DashboardItem size="2">
+                    <h5>Shirt orders by size</h5>
+                    <PieChart data="statistics.orders_by_size" />
+                </DashboardItem>
             </div>
         </Layout>
     </t>
